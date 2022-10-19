@@ -27,20 +27,18 @@ public class BdepartmentDaoImpl implements BdepartmentDao {
 
     // 取得鞋廠部門資料
     @Override
-    @SuppressWarnings("unchecked")
-    public List<Bdepartment> getDepList(String GXLB) {
-        String sqlGetDepList = "SELECT ID, DepName, DepMemo FROM BDepartment WHERE 1 = 1 ";
+    public List<Bdepartment> getDepList(String extraSQL) {
+        String sqlGetDepList = "SELECT ID, DepName, DepMemo FROM BDepartment ";
         map = new HashMap<>();
-        if (!GXLB.equals("ALL")) {
-            sqlGetDepList = sqlGetDepList + "AND GXLB = :GXLB ";
-            map.put("GXLB", GXLB);
+        if (!extraSQL.equals("ALL")) {
+            sqlGetDepList = sqlGetDepList + extraSQL;
         }
 
         List<Bdepartment> getDepList = lyserpJdbcTemplate.query(sqlGetDepList, map, new BdepartmentRowMapper());
         if (getDepList.size() > 0) {
             return getDepList;
         } else {
-            return Collections.EMPTY_LIST;
+            return Collections.emptyList();
         }
     }
 }

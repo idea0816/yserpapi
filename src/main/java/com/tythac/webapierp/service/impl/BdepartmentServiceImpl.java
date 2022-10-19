@@ -17,13 +17,22 @@ import java.util.List;
  */
 @Component
 public class BdepartmentServiceImpl implements BdepartmentService {
-
     @Resource
     private BdepartmentDao bdepartmentDao;
 
     // 取得鞋廠部門資料
     @Override
-    public List<Bdepartment> getDepList(String GXLB) {
-        return bdepartmentDao.getDepList(GXLB);
+    public List<Bdepartment> getDepList(String extra) {
+        String extraSQL = "";
+        switch (extra) {
+            // 成型 A
+            case "assembly" :
+                extraSQL = " WHERE GSBH = 'VDH' AND GXLB = 'A' ";
+                break;
+            case "ALL" :
+                extraSQL = "ALL";
+                break;
+        }
+        return bdepartmentDao.getDepList(extraSQL);
     }
 }
