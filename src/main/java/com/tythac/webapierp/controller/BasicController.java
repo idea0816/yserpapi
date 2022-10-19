@@ -28,7 +28,11 @@ public class BasicController {
     private BdepartmentService bdepartmentService;
 
     // 取得單位資料
-    @Operation(summary = "部門資料", description = "部門列表、不傳值時預設列出所有部門")
+    @Operation(summary = "部門資料", description = "部門列表、不傳值時預設(ALL)列出所有部門. " +
+            "裁斷：Cutting, " +
+            "底加：Outsole, " +
+            "針車：Sting, " +
+            "成型：assembly ")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success",
                     content = {
@@ -39,7 +43,7 @@ public class BasicController {
                     })
     })
     @GetMapping("/getDepList")
-    public List<Bdepartment> getDepList(@RequestParam(value = "GXLB", defaultValue = "ALL") String GXLB) {
-        return bdepartmentService.getDepList(GXLB);
+    public List<Bdepartment> getDepList(@RequestParam(value = "extra", defaultValue = "ALL") String extra) {
+        return bdepartmentService.getDepList(extra);
     }
 }
