@@ -26,7 +26,7 @@ public class BdepartmentServiceImpl implements BdepartmentService {
         String extraSQL = "";
         switch (extra) {
             // 成型 A
-            case "assembly" :
+            case "Assembly" :
                 extraSQL = " WHERE GSBH = 'VDH' AND GXLB = 'A' ";
                 break;
             case "ALL" :

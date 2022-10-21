@@ -32,7 +32,7 @@ public class BasicController {
             "裁斷：Cutting, " +
             "底加：Outsole, " +
             "針車：Sting, " +
-            "成型：assembly ")
+            "成型：Assembly ")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success",
                     content = {
