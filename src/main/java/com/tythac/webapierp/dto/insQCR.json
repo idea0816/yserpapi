@@ -1,0 +1,53 @@
+{
+  "insQCR": [
+    {
+      "proNo": "2022102901",
+      "scdate": "2022-12-19",
+      "sjxh": "10",
+      "gsbh": "VDH",
+      "depNo": "VDH0502",
+      "gxlb": "A",
+      "scbh": "JHS2212-280",
+      "cc": "",
+      "userid": "SUPER",
+      "userdate": "2022-10-29"
+    }
+  ],
+  "insQCRD": [
+    {
+      "proNo": "2022102901",
+      "yybh": "Q101",
+      "qty": 1,
+      "userid": "SUPER",
+      "userdate": "2022-10-29"
+    },
+    {
+      "proNo": "2022102901",
+      "yybh": "Q102",
+      "qty": 2,
+      "userid": "SUPER",
+      "userdate": "2022-10-29"
+    },
+    {
+      "proNo": "2022102901",
+      "yybh": "Q103",
+      "qty": 3,
+      "userid": "SUPER",
+      "userdate": "2022-10-29"
+    },
+    {
+      "proNo": "2022102901",
+      "yybh": "Q104",
+      "qty": 4,
+      "userid": "SUPER",
+      "userdate": "2022-10-29"
+    },
+    {
+      "proNo": "2022102901",
+      "yybh": "Q105",
+      "qty": 5,
+      "userid": "SUPER",
+      "userdate": "2022-10-29"
+    }
+  ]
+}

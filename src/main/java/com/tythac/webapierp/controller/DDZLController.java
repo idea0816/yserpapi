@@ -43,7 +43,7 @@ public class DDZLController {
                             )
                     })
     })
-    @GetMapping("/getDDZLList")
+    @GetMapping("/getDDZLs")
     public List<DDZL> getDDZLList(@RequestParam(value = "extra", defaultValue = "ALL") String extra){
         return ddzlService.getDDZL(extra);
     }

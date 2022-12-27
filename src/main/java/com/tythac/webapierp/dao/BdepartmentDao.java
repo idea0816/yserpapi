@@ -14,5 +14,5 @@ import java.util.List;
 public interface BdepartmentDao {
 
     // 取得鞋廠部門資料
-    List<Bdepartment> getDepList(String extra);
+    List<Bdepartment> getDeps(String extra);
 }

@@ -22,7 +22,7 @@ public class BdepartmentServiceImpl implements BdepartmentService {
 
     // 取得鞋廠部門資料
     @Override
-    public List<Bdepartment> getDepList(String extra) {
+    public List<Bdepartment> getDeps(String extra) {
         String extraSQL = "";
         switch (extra) {
             // 成型 A
@@ -33,6 +33,6 @@ public class BdepartmentServiceImpl implements BdepartmentService {
                 extraSQL = "ALL";
                 break;
         }
-        return bdepartmentDao.getDepList(extraSQL);
+        return bdepartmentDao.getDeps(extraSQL);
     }
 }
