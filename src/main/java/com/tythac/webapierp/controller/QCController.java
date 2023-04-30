@@ -24,7 +24,9 @@ import java.util.Map;
  *
  * 取得品檢不良原因-QCBLYY
  * 寫入檢驗不良數量資料-QCR, QCRD
- * Test
+ * 取得品檢日報告-Chart
+ * 取得品檢日報告-Sheet
+ * 取得品檢週報告
  */
 
 @Tag(name = "品檢作業")
@@ -68,10 +70,48 @@ public class QCController {
         return "success";
     }
 
-    // Test
-    @GetMapping("/QC/test")
-    public String test(){
-        qcService.test();
-        return "test";
+    // 取得品檢日報告-Chart
+    @Operation(summary = "品檢日報告-Chart", description = "傳入1.部門名稱、2.日期(格式：2023-01-01)以利取得日報告")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Success",
+                    content = {
+                            @Content(
+                                    mediaType = "application/json"
+                            )
+                    })
+    })
+    @GetMapping("/QC/dayReportChart")
+    public ResponseEntity getDayReportChart(@RequestParam String depName, String dateTime){
+        return ResponseEntity.status(HttpStatus.OK).body(qcService.dayReport(depName, dateTime));
+    }
+
+    // 取得品檢日報告-Sheet
+    @Operation(summary = "品檢日報告-Sheet", description = "傳入1.部門名稱、2.日期(格式：2023-01-01)以利取得日報告")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Success",
+                    content = {
+                            @Content(
+                                    mediaType = "application/json"
+                            )
+                    })
+    })
+    @GetMapping("/QC/dayReportSheet")
+    public ResponseEntity getDayReportSheet(@RequestParam String depName, String dateTime){
+        return ResponseEntity.status(HttpStatus.OK).body(qcService.dayReportSheet(depName, dateTime));
+    }
+
+    // 取得品檢週報告
+    @Operation(summary = "品檢週報告", description = "傳入當週星期一&星期六、以利取得週數字(傳入格式：2023-01-01)")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Success",
+                    content = {
+                            @Content(
+                                    mediaType = "application/json"
+                            )
+                    })
+    })
+    @GetMapping("/QC/weekReport")
+    public ResponseEntity getWeekReport(@RequestParam String weekFirst, String weekLast){
+        return ResponseEntity.status(HttpStatus.OK).body(qcService.weekReport(weekFirst, weekLast));
     }
 }

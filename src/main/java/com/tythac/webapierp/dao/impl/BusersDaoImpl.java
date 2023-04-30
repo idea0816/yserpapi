@@ -17,7 +17,7 @@ import java.util.Map;
  * @version Create Time: 2022/11/4
  * @Description 帳號資料
  * <p>
- * 帳號資料-Authorize
+ * 帳號資料-Authorize id
  */
 @Component
 public class BusersDaoImpl implements BusersDao {
@@ -25,7 +25,7 @@ public class BusersDaoImpl implements BusersDao {
     private NamedParameterJdbcTemplate lyserpJdbcTemplate;
     Map<String, Object> map;
 
-    // 帳號資料-Authorize
+    // 帳號資料-Authorize id
     @Override
     public Busers authorize(Busers busers) {
         String sqlAuth = "SELECT USERID, USERNAME, PWD, EMAIL, LASTDATETIME, YN, passwordchend, fromIP, depid, Engname, Report, SupervisorID " +

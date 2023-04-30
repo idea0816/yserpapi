@@ -21,4 +21,5 @@ public interface timeService {
 
     // 現在年月日時-Web
     String nowWebT();
+
 }

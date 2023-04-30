@@ -7,9 +7,9 @@ import com.tythac.webapierp.model.Busers;
  * @version Create Time: 2022/11/4
  * @Description 帳號資料
  * <p>
- * 帳號資料-Authorize
+ * 帳號資料-Authorize id
  */
 public interface BusersDao {
-    // 帳號資料-Authorize
+    // 帳號資料-Authorize id
     Busers authorize(Busers busers);
 }
